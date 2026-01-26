@@ -1,0 +1,7 @@
+{
+  "name": "SwiftLab - Online Diagnostic Reporting System",
+  "description": "A comprehensive, role-based diagnostic lab management system featuring status-driven workflows for patients, lab staff, and administrators.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
