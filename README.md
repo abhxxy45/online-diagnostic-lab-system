@@ -1,115 +1,121 @@
-# Online Diagnostic Lab Reporting System
+# Online Diagnostic Lab System
 
-📌 Project Description
+Patient test report management system with digital workflows for healthcare diagnostics.
 
-The Online Diagnostic Lab Reporting System is a web-based application designed to manage laboratory reports digitally.
-It helps patients and laboratories to upload, store, and access diagnostic test reports online easily and securely.
+## Tech Stack
 
-This system reduces manual paperwork and allows faster report management.
+| Layer | Technology |
+|-------|------------|
+| **Frontend** | React, TypeScript, Vite |
+| **Backend** | Node.js, Express.js, TypeScript |
+| **Database** | MySQL |
+| **API** | REST |
+| **Build** | Vite, npm |
 
----
-🚀 Live Demo
-
-You can view the deployed project here:
-🔗 https://swiftlabs.netlify.app/
-
----
-
-🎯 Features
-
-* User Registration and Login
-* Upload Diagnostic Reports
-* View and Download Lab Reports
-* Manage Patient Records
-* Secure Data Storage
-* Simple and User-Friendly Interface
-
----
-
-🛠️ Technologies Used
-
-* **Frontend:** TypeScript, HTML, Vite
-* **Backend:** Node.js / API services
-* **Database:** SQL
-* **Other Tools:** Git, GitHub
-
----
-
-📂 Project Structure
+## Project Structure
 
 ```
-components/        → UI components
-services/          → API services
-App.tsx            → Main application file
-index.tsx          → Application entry point
-constants.tsx      → Constant values
-schema.sql         → Database schema
-package.json       → Project dependencies
-tsconfig.json      → TypeScript configuration
-vite.config.ts     → Vite configuration
+online-diagnostic-lab-system/
+├── src/
+│   ├── components/         # React components
+│   ├── services/           # API services
+│   ├── types.ts            # TypeScript types
+│   ├── constants.tsx       # Application constants
+│   └── App.tsx             # Root component
+├── schema.sql              # Database schema
+├── package.json            # Dependencies
+├── tsconfig.json           # TypeScript config
+├── vite.config.ts          # Vite configuration
+└── README.md
 ```
 
----
+## Features
 
-⚙️ Installation and Setup
+- **Patient Management**: Register and manage patient records
+- **Test Catalog**: Define available diagnostic tests with pricing
+- **Report Generation**: Digital test report creation and management
+- **Results Entry**: Lab technician interface for entering results
+- **Report Retrieval**: Patient portal for viewing/downloading reports
+- **REST API**: Structured endpoints for all operations
 
-1. Clone the repository
+## Database Schema
 
-```
+The `schema.sql` file contains the complete MySQL schema including:
+- `patients` table — patient demographics and contact info
+- `tests` table — test catalog with categories and pricing
+- `test_orders` table — ordered tests linked to patients
+- `test_results` table — results with values, units, reference ranges
+- `users` table — lab staff authentication
+
+## Setup Instructions
+
+### Prerequisites
+- Node.js 18+
+- MySQL 8.0+
+- npm
+
+### Installation
+
+```bash
+# Clone repository
 git clone https://github.com/abhxxy45/online-diagnostic-lab-system.git
-```
-
-2. Go to project folder
-
-```
 cd online-diagnostic-lab-system
-```
 
-3. Install dependencies
-
-```
+# Install dependencies
 npm install
-```
 
-4. Run the project
+# Setup database
+mysql -u root -p < schema.sql
 
-```
+# Configure environment
+cp .env.example .env
+# Edit .env with your database credentials
+
+# Start development server
 npm run dev
 ```
 
-5. Open browser
+### Environment Variables
 
+Create `.env` file:
+
+```env
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_password
+DB_NAME=diagnostic_lab
+PORT=3000
 ```
-http://localhost:3000
+
+## API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | /api/patients | List all patients |
+| POST | /api/patients | Register new patient |
+| GET | /api/tests | List available tests |
+| POST | /api/orders | Create test order |
+| PUT | /api/results/:id | Enter test results |
+| GET | /api/reports/:patientId | Get patient reports |
+
+## Development
+
+```bash
+# Frontend dev server
+npm run dev
+
+# Build for production
+npm run build
 ```
 
----
+## Screenshots
 
-🗄️ Database Setup
+*To be added*
 
-1. Open your SQL database.
-2. Run the `schema.sql` file.
-3. This will create the required tables for the system.
+## License
 
----
-
-📸 Screenshots
-<img width="1366" height="768" alt="Screenshot (534)" src="https://github.com/user-attachments/assets/60435fce-2d2c-4e03-80ad-91f48af7e1ac" />
-<img width="1366" height="768" alt="Screenshot (535)" src="https://github.com/user-attachments/assets/71e643b1-4616-4b9b-902f-061bc14c0a42" />
-<img width="1366" height="768" alt="Screenshot (536)" src="https://github.com/user-attachments/assets/e02a410d-bca7-40b4-92b6-b2d5e4e0acd0" />
-<img width="1366" height="768" alt="Screenshot (537)" src="https://github.com/user-attachments/assets/9494f834-24af-4556-81de-40eabf05a70d" />
-
-
-👨‍💻 Author
-
-**Abhay Verma**
+MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
-## 📫 Contact
-
-📧 Email: abhayvermaa45@gmail.com
-💻 GitHub: https://github.com/abhxxy45
-
-## 📄 License
-This project is created for educational and academic purposes.
+**Repository**: https://github.com/abhxxy45/online-diagnostic-lab-system
